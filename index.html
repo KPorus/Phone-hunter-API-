@@ -7,12 +7,15 @@
     <title>Phone Hunter</title>
   </head>
   <body class="bg-dark">
+
+    <!-- heading bar -->
     <section id="header">
        <div class="container">
         <h1 class="text-center text-uppercase font-monospace m-4 text-danger">Welcome Phone Hunter</h1>
        </div>
     </section>
 
+<!-- search bar -->
     <section class="mb-4">
         <div class="container d-flex d-inline-block justify-content-center">
             <input type="text" id="phone-search" class="form-control w-50 me-3" aria-describedby="passwordHelpBlock">
@@ -20,12 +23,28 @@
         </div>
     </section>
 
+<!-- phone item -->
     <section id="phone">
         <div class="container">
-            <div id="phone-container" class="row row-cols-1 row-cols-md-3 g-4">
-               
+          <div id="phone-container" class="row row-cols-1 row-cols-md-3 g-4"></div>
         </div>
     </section>
+    <!-- error text -->
+    <div class="d-none text-danger text-center font-monospace mt-3 text-warning" id="error">
+      <h2>There is no phone.Try again</h2>
+    </div>
+
+    <section class="d-none" id="spinner">
+      <div class="container">
+        <div class="d-flex justify-content-center align-items-center text-danger" style="height: 500px;">
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
     <!-- Optional JavaScript; choose one of the two! -->
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>

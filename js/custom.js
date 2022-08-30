@@ -7,6 +7,14 @@ let loadPhone = (search) =>{
 let display = phone =>{
     let phoneContainer = document.getElementById(`phone-container`);
     phoneContainer.textContent = " ";
+    let err = document.getElementById(`error`)
+    if(phone.length == 0)
+    {
+      err.classList.remove(`d-none`);
+    }
+    else{
+      err.classList.add(`d-none`);
+    }
     phone.forEach(phones => {
         let phonebody = document.createElement(`div`);
         phonebody.classList.add(`col`);
@@ -22,11 +30,24 @@ let display = phone =>{
         `
         phoneContainer.appendChild(phonebody);
     });
+    spinner(false);
 }
 
 document.getElementById(`search`).addEventListener(`click`,function(){
+  spinner(true);
     let phoneSearch = document.getElementById(`phone-search`).value;
     let search =phoneSearch;
     loadPhone(search);
 })
-loadPhone();
+
+let spinner = isloading =>{
+  let spin = document.getElementById(`spinner`);
+  if(isloading)
+  {
+    spin.classList.remove(`d-none`);
+  }
+  else
+  {
+    spin.classList.add(`d-none`);
+  }
+}
