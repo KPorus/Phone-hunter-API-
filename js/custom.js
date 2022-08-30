@@ -35,10 +35,21 @@ let display = phone =>{
 
 document.getElementById(`search`).addEventListener(`click`,function(){
   spinner(true);
+  let phoneSearch = document.getElementById(`phone-search`).value;
+  let search =phoneSearch;
+  loadPhone(search);
+})
+
+document.getElementById(`phone-search`).addEventListener(`keypress`,function(event){
+  if(event.key == 'Enter')
+  {
+    spinner(true);
     let phoneSearch = document.getElementById(`phone-search`).value;
     let search =phoneSearch;
     loadPhone(search);
+  }
 })
+
 
 let spinner = isloading =>{
   let spin = document.getElementById(`spinner`);
